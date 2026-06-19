@@ -718,6 +718,60 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
     </div>
   </div>
 
+  <!-- Future benchmarks — optional demand discovery (anonymous; informs what to build next) -->
+  <style>
+    .future{ margin-top:18px; border:1px solid var(--border,#e6ebf2); border-radius:14px; padding:16px 18px; background:#fff; }
+    .future-head{ font-weight:700; color:var(--navy,#0A2342); font-size:14px; }
+    .future-sub{ color:var(--text-muted,#64748b); font-size:12px; margin:2px 0 12px; }
+    .future-opts{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    @media (max-width:560px){ .future-opts{ grid-template-columns:1fr; } }
+    .fopt{ display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:#33414f; background:var(--soft,#f4f7fb); border:1px solid var(--border,#e6ebf2); border-radius:9px; padding:9px 11px; cursor:pointer; line-height:1.35; }
+    .fopt input{ accent-color:#1E9FD8; width:15px; height:15px; margin-top:1px; flex:none; }
+    .future-other{ width:100%; box-sizing:border-box; margin-top:10px; border:1px solid var(--border,#e6ebf2); border-radius:9px; padding:10px 12px; font-size:13px; font-family:inherit; }
+    .future-other:focus{ outline:none; border-color:#34BDF2; }
+    .future-btn{ margin-top:10px; background:var(--navy,#0A2342); color:#fff; border:none; border-radius:9px; padding:10px 16px; font-size:13px; font-weight:600; cursor:pointer; font-family:inherit; }
+    .future-btn:hover{ background:#0c2a52; }
+    .future-done{ display:none; color:#0c905c; font-size:13px; font-weight:600; }
+    .future.sent .future-sub, .future.sent .future-opts, .future.sent .future-other, .future.sent .future-btn{ display:none; }
+    .future.sent .future-done{ display:block; }
+  </style>
+  <div class="future" id="future">
+    <div class="future-head">What would you like to benchmark next?</div>
+    <div class="future-sub">Optional — pick anything you'd find useful. It helps decide what we build next.</div>
+    <div class="future-opts" id="future-opts">
+      <label class="fopt"><input type="checkbox" value="State / regional comparison"> Compare within my state or region</label>
+      <label class="fopt"><input type="checkbox" value="Whole-family benchmark"> Benchmarks for my whole family</label>
+      <label class="fopt"><input type="checkbox" value="Coverage over time / tracking"> How my number changes as I age</label>
+      <label class="fopt"><input type="checkbox" value="Health / lifestyle-adjusted"> Health &amp; lifestyle-adjusted benchmarks</label>
+      <label class="fopt"><input type="checkbox" value="Disability / income protection"> Disability &amp; income-protection benchmarks</label>
+      <label class="fopt"><input type="checkbox" value="Policy-type guidance"> Which policy type fits my situation</label>
+    </div>
+    <input type="text" id="future-other" class="future-other" placeholder="Anything else you'd want to see? (optional)">
+    <button type="button" class="future-btn" id="future-btn">Share what you'd like</button>
+    <div class="future-done" id="future-done">✓ Thanks — noted. This shapes what we build next.</div>
+  </div>
+  <script>
+    (function(){
+      var btn = document.getElementById('future-btn'); if(!btn) return;
+      btn.addEventListener('click', function(){
+        var picks = Array.prototype.slice.call(document.querySelectorAll('#future-opts input:checked')).map(function(c){ return c.value; });
+        var other = (document.getElementById('future-other').value || '').trim();
+        if (picks.length === 0 && !other) { document.getElementById('future-other').focus(); return; }
+        if (typeof logToSheet === 'function') {
+          logToSheet({
+            type: 'interest',
+            interests: picks.join(' | '),
+            interest_other: other,
+            utm_source: (typeof utm === 'function' ? utm().source : ''),
+            utm_medium: (typeof utm === 'function' ? utm().medium : ''),
+            utm_campaign: (typeof utm === 'function' ? utm().campaign : '')
+          });
+        }
+        document.getElementById('future').classList.add('sent');
+      });
+    })();
+  </script>
+
   <div class="disc">
     Benchmarks use life-stage multipliers calibrated to NAIC income-replacement guidance and III expense categories. "Average actually carried" figures are estimates derived from LIMRA 2024 Insurance Barometer survey data on policy ownership and face amounts by demographic cohort. These are educational — not personalized financial or insurance advice.
   </div>
@@ -779,6 +833,29 @@ document.getElementById('income').addEventListener('input', function() {
 
 function toggleOpt() { document.getElementById('opt-btn').classList.toggle('open'); document.getElementById('opt-f').classList.toggle('on'); }
 function toggleBd()  { document.getElementById('bd-btn').classList.toggle('open'); document.getElementById('bd-c').classList.toggle('on'); }
+
+// ===== Anonymous benchmark data logging (de-identified — no email, no IP) =====
+// Paste your Google Apps Script Web App URL below and set SHEET_TOKEN to match the
+// TOKEN in that script. Until configured, logging is disabled and the site behaves normally.
+const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx7tCeJ-l_V2j-cTyRx7crBJPUUPAP5KKArPj4YUbSUnFEFbc4YIWt48t7Sr4eYpqs3/exec';
+const SHEET_TOKEN    = 'jlm-CHANGE-ME';
+const anonId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+              : (Date.now().toString(36) + Math.random().toString(36).slice(2));
+function utm() {
+  const q = new URLSearchParams(location.search);
+  return { source: q.get('utm_source')||'', medium: q.get('utm_medium')||'', campaign: q.get('utm_campaign')||'' };
+}
+function deviceType() { return window.matchMedia('(max-width: 768px)').matches ? 'mobile' : 'desktop'; }
+function logToSheet(payload) {
+  if (!SHEET_ENDPOINT || SHEET_ENDPOINT === 'YOUR_APPS_SCRIPT_URL') return; // not configured yet
+  try {
+    fetch(SHEET_ENDPOINT, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(Object.assign({ token: SHEET_TOKEN, anon_id: anonId }, payload))
+    });
+  } catch (e) { /* logging must never break the page */ }
+}
 
 function fmtFull(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
 function fmtS(v) {
@@ -1008,6 +1085,25 @@ function render(r, p) {
 
   const card = document.getElementById('results');
   card.classList.add('on');
+
+  // Anonymous, de-identified dataset — one row per completed benchmark (no email, no IP).
+  // current_coverage is left blank when not entered, so a phantom "$0" never pollutes the "what people carry" data.
+  const rawCurr = (document.getElementById('curr').value || '').trim();
+  const enteredCoverage = rawCurr === '' ? '' : Number(rawCurr);
+  logToSheet({
+    type: 'benchmark',
+    age: p.age, state: p.state, income: p.income,
+    current_coverage: enteredCoverage,
+    marital: p.marital, children: p.kids,
+    homeowner: p.homeowner ? 'yes' : 'no', stay_at_home_spouse: p.sah ? 'yes' : 'no',
+    mortgage: p.mortgage || '', other_debt: p.debt || '',
+    benchmark_conservative: r.con, benchmark_typical: r.typ, benchmark_protective: r.pro,
+    peers_carry_estimate: actual,
+    coverage_gap_vs_typical: enteredCoverage === '' ? '' : Math.max(0, r.typ - Number(enteredCoverage)),
+    device: deviceType(), referrer: document.referrer || '',
+    utm_source: utm().source, utm_medium: utm().medium, utm_campaign: utm().campaign
+  });
+
   // Analytics: benchmark generated (fires only if Plausible is loaded).
   if (typeof window.plausible === 'function') window.plausible('Benchmark Completed');
   setTimeout(() => card.scrollIntoView({behavior:'smooth', block:'start'}), 100);
@@ -1089,6 +1185,8 @@ document.addEventListener('keydown', e => { if (e.key==='Enter' && e.target.tagN
 
     const data = new FormData();
     data.append('email_address', email);
+    // Channel attribution (#3): stored if you create a custom field named "source" in Kit; unknown fields are safely ignored.
+    data.append('fields[source]', utm().source || (document.referrer ? new URL(document.referrer).hostname : 'direct'));
 
     // no-cors: the subscriber is recorded by Kit even though the response is opaque,
     // so we optimistically confirm. (Kit then sends your form's incentive / confirmation email.)
