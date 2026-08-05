@@ -391,8 +391,8 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
         <circle cx="38" cy="38" r="8.5" fill="#34BDF2"/>
       </svg>
     </span>
-    <h1>How does your coverage <span class="accent">compare</span>?</h1>
-    <p>Grounded in industry-standard actuarial methodology — and what your peers actually hold.</p>
+    <h1>How does your life insurance coverage <span class="accent">compare</span>?</h1>
+    <p>See whether your family has enough life insurance — based on what people like you actually have.</p>
     <div class="trust-row">
       <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Based on LIMRA research</span>
       <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Actuarial methodology</span>
@@ -416,15 +416,15 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   </div>
   <div class="sample-profile">38 · Married · 2 kids · $120k income · homeowner</div>
   <div class="sample-mini">
-    <div class="sm"><span class="sm-l">Peers carry</span><span class="sm-v">$445k</span></div>
-    <div class="sm"><span class="sm-l">Recommended</span><span class="sm-v">$1.2M–$1.6M</span></div>
+    <div class="sm"><span class="sm-l">People like you carry</span><span class="sm-v">$520k</span></div>
+    <div class="sm"><span class="sm-l">Recommended</span><span class="sm-v">$1.1M–$1.5M</span></div>
   </div>
   <div class="sample-gap">
     <div>
-      <span class="sg-label">Coverage gap</span>
-      <span class="sg-sub">vs. the needs-based benchmark</span>
+      <span class="sg-label">Estimated shortfall</span>
+      <span class="sg-sub">extra coverage you may want</span>
     </div>
-    <span class="sg-value">~$905k</span>
+    <span class="sg-value">~$705k</span>
   </div>
 </div>
 
@@ -577,6 +577,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <div class="r-top" style="padding-bottom:16px">
     <div class="r-eyebrow">Your Results</div>
     <div class="r-title" id="r-title">Benchmark for similar households</div>
+    <div style="font-size:11.5px;color:var(--text-muted);margin-top:4px;">A preliminary, educational estimate — not personalized advice.</div>
   </div>
 
   <!-- Benchmark range bars -->
@@ -584,21 +585,21 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
     <div class="bm-rows">
       <div class="bm-row">
         <div class="bm-top">
-          <span class="bm-lbl">Conservative</span>
+          <span class="bm-lbl">Basic protection <span style="font-weight:400;color:var(--text-muted);font-size:11px">· covers the essentials</span></span>
           <span class="bm-val" id="v-c">—</span>
         </div>
         <div class="bar-track"><div class="bar-fill c" id="b-c"></div></div>
       </div>
       <div class="bm-row">
         <div class="bm-top">
-          <span class="bm-lbl typ">Typical <span class="bm-badge">Midpoint</span></span>
+          <span class="bm-lbl typ">Recommended <span class="bm-badge">Best fit</span></span>
           <span class="bm-val typ" id="v-t">—</span>
         </div>
         <div class="bar-track"><div class="bar-fill t" id="b-t"></div></div>
       </div>
       <div class="bm-row">
         <div class="bm-top">
-          <span class="bm-lbl">Protective</span>
+          <span class="bm-lbl">Extra protection <span style="font-weight:400;color:var(--text-muted);font-size:11px">· a fuller cushion</span></span>
           <span class="bm-val" id="v-p">—</span>
         </div>
         <div class="bar-track"><div class="bar-fill p" id="b-p"></div></div>
@@ -608,23 +609,26 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
 
   <!-- 3-way side-by-side -->
   <div class="cmp-section">
-    <div class="sec-title">Side-by-Side Comparison</div>
+    <div class="sec-title">How you compare</div>
     <div class="cmp-grid">
       <div class="cmp-box cb-bm">
-        <div class="cmp-lbl">Your Benchmark</div>
+        <div class="cmp-lbl">Recommended coverage</div>
         <div class="cmp-val" id="cc-bm">—</div>
-        <div class="cmp-sub">Typical for your profile</div>
+        <div class="cmp-sub">the suggested amount for you</div>
       </div>
       <div class="cmp-box cb-ac">
-        <div class="cmp-lbl">Avg. Actually Carried</div>
+        <div class="cmp-lbl">Average for families like yours</div>
         <div class="cmp-val" id="cc-ac">—</div>
-        <div class="cmp-sub" id="cc-ac-sub">People in your cohort</div>
+        <div class="cmp-sub" id="cc-ac-sub">families like yours</div>
       </div>
       <div class="cmp-box cb-yo" id="cc-yo-box">
-        <div class="cmp-lbl">Your Coverage</div>
+        <div class="cmp-lbl">Your current coverage</div>
         <div class="cmp-val" id="cc-yo">—</div>
-        <div class="cmp-sub" id="cc-yo-sub">Self-reported</div>
+        <div class="cmp-sub" id="cc-yo-sub">what you entered</div>
       </div>
+    </div>
+    <div id="cc-note" style="display:none;margin-top:10px;font-size:11.5px;color:var(--text-muted);background:var(--soft,#f4f7fb);border:1px solid var(--border,#e6ebf2);border-radius:9px;padding:9px 12px;">
+      Note: the published study's top income group is $125k and over. At your income, the true average for households like yours is likely higher than shown.
     </div>
   </div>
 
@@ -632,14 +636,14 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <div class="vc-section">
     <div class="sec-title" style="padding-top:18px">Coverage at a glance</div>
     <div class="vc-row">
-      <div class="vc-name">Benchmark</div>
+      <div class="vc-name">Recommended</div>
       <div class="vc-wrap">
         <div class="vc-bg"></div>
         <div class="vc-fill vbm" id="vf-bm"><span class="vc-lbl" id="vl-bm"></span></div>
       </div>
     </div>
     <div class="vc-row">
-      <div class="vc-name">Avg. carried</div>
+      <div class="vc-name">Families like you</div>
       <div class="vc-wrap">
         <div class="vc-bg"></div>
         <div class="vc-fill vac" id="vf-ac"><span class="vc-lbl" id="vl-ac"></span></div>
@@ -666,7 +670,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <!-- Product -->
   <div class="prod-row">
     <div>
-      <div class="prod-eyebrow">Best-fit product</div>
+      <div class="prod-eyebrow">A common starting point</div>
       <div class="prod-val" id="pt">—</div>
       <div class="prod-desc" id="pd">—</div>
     </div>
@@ -773,7 +777,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   </script>
 
   <div class="disc">
-    Benchmarks use life-stage multipliers calibrated to NAIC income-replacement guidance and III expense categories. "Average actually carried" figures are estimates derived from LIMRA 2024 Insurance Barometer survey data on policy ownership and face amounts by demographic cohort. These are educational — not personalized financial or insurance advice.
+    This tool follows the needs-based approach described in the NAIC Life Insurance Buyer's Guide — income replacement plus mortgage, education, debts and final expenses. The "average for families like yours" figures (face amount, not premiums; employer plus personal coverage combined) are derived from LIMRA's published household coverage study (Life Insurance Ownership in Focus, 2016 — values in 2016 dollars), with an income adjustment from the same study; single-parent figures are partly modeled because the study doesn't separate that group. Full sources are in the footer. Educational only — not personalized financial or insurance advice.
   </div>
 </div>
 
@@ -811,7 +815,28 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
 </div>
 
 <div class="footer">
-  Sources: LIMRA 2024 Insurance Barometer · NAIC Consumer Guidance · Insurance Information Institute · U.S. Census ACS
+  <div style="max-width:680px;margin:0 auto;text-align:left;line-height:1.55;">
+    <div style="font-weight:700;color:var(--navy);font-size:13px;margin-bottom:8px;">Sources &amp; terms</div>
+    <p style="margin:0 0 10px;">
+      <strong>Actuarial methodology</strong> is the branch of math insurers use to measure risk and estimate how much coverage a household needs.
+      <strong>LIMRA</strong> and <strong>Life Happens</strong> are non-profit research groups whose yearly Insurance Barometer Study tracks life-insurance ownership and the coverage gap.
+      <strong>NAIC</strong> is the National Association of Insurance Commissioners — the group of U.S. state insurance regulators; its Life Insurance Buyer's Guide explains how to work out how much coverage you need.
+    </p>
+    <p style="margin:0 0 10px;">
+      <strong>What's behind the numbers:</strong> The underinsurance trend is published — about half of U.S. adults have life insurance and roughly 42% (about 102 million) say they need more
+      (<a href="https://www.limra.com/en/newsroom/news-releases/2024/u.s.-life-insurance-need-gap-grows-in-2024/" target="_blank" rel="noopener" style="color:#1E9FD8;">LIMRA / Life Happens, 2024</a>).
+      Your recommended range is a needs-based estimate — income replacement plus mortgage, education, debts and final expenses — the approach the
+      <a href="https://content.naic.org/article/consumer-insight-tips-buying-life-insurance" target="_blank" rel="noopener" style="color:#1E9FD8;">NAIC Buyer's Guide</a> describes.
+      The "average for families like yours" figures are derived from LIMRA's
+      <a href="https://www.limra.com/siteassets/newsroom/help-protect-our-families/consumer-insights/2021/january/life-insurance-ownership-in-focus-2016.pdf" target="_blank" rel="noopener" style="color:#1E9FD8;">Life Insurance Ownership in Focus (2016)</a>
+      — the most recent public per-group coverage study, shown in 2016 dollars, with an income adjustment from the same study (single-parent figures partly modeled).
+      For scale: the average new individual policy purchased was $209,000 in 2024
+      (<a href="https://www.acli.com/about-the-industry/life-insurers-fact-book/2025-life-insurers-fact-book" target="_blank" rel="noopener" style="color:#1E9FD8;">ACLI Fact Book</a>),
+      and the median coverage held per insured household was $150,000 in 2022
+      (<a href="https://www.federalreserve.gov/econres/scfindex.htm" target="_blank" rel="noopener" style="color:#1E9FD8;">Federal Reserve Survey of Consumer Finances</a>, via ACLI).
+    </p>
+    <p style="margin:0;font-size:11px;">Educational only — not personalized financial or insurance advice.</p>
+  </div>
 </div>
 </div>
 
@@ -912,34 +937,50 @@ function ageAdj(a) {
 function extraAdj(p) {
   let a = 0;
   if (p.kids>=2) a++; if (p.kids>=4) a++;
-  if (p.homeowner) a++; if (p.sah) a++;
+  if (p.sah) a++;  // homeowner no longer adds a flat 1x income — housing need is counted once, via the mortgage add-on
   if (p.debt==='$25k-$100k') a++; if (p.debt==='Over $100k') a+=2;
   return a;
 }
 function mtgAdd(b) { return {'None':0,'Under $100k':75000,'$100k-$250k':175000,'$250k-$500k':350000,'Over $500k':550000}[b]||0; }
 
-// Average actually-carried data — derived from LIMRA 2024 Barometer
-// face-amount distributions by life stage and income band
+// "Average for families like yours" — derived from LIMRA, "Life Insurance Ownership
+// in Focus" (2016), the most recent publicly available per-cohort U.S. coverage study.
+// Free PDF: https://www.limra.com/siteassets/newsroom/help-protect-our-families/consumer-insights/2021/january/life-insurance-ownership-in-focus-2016.pdf
+//
+// Derivation per cell (values in 2016 dollars, disclosed on page):
+//   life-stage mean (Table 15, p.22: under-45 / 45+ × married / not-married × children)
+//   × income relativity (Table 4, p.14 band mean ÷ Table 1 national mean $295,806)
+//   rounded to the nearest $5,000.
+// Income relativities (four bands — top band NOT averaged, per Table 4 as published):
+//   <$50k → 0.358 (avg of LIMRA's <$35k $72,877 and $35–50k $138,780)
+//   $50–100k → 0.864 ($255,678)
+//   $100–125k → 1.295 ($383,116)
+//   $125k+ → 1.818 ($537,687)
+// Documented approximations:
+//   1) LIMRA reports "not married" as one group — single-parent cells apply the
+//      married with/without-children ratio (×1.29 under 45, ×1.47 at 45+).
+//   2) Life stage × income is not published jointly; multiplying the two margins
+//      assumes independence and may overstate the highest-income cells.
+//   3) The $125k+ band is open-ended: for incomes well above $125k the true peer
+//      average is likely higher than shown — disclosed on-page (see cc-note),
+//      never extrapolated beyond the published range.
+// Long term this table is replaced by first-party benchmark data.
 function getActualAvg(p) {
-  const ib = p.income < 50000 ? 0 : p.income < 100000 ? 1 : 2;
-  const ab = p.age <= 35 ? 'y' : p.age <= 55 ? 'm' : 's';
+  const ib = p.income < 50000 ? 0 : p.income < 100000 ? 1 : p.income < 125000 ? 2 : 3;
+  const ab = p.age < 45 ? 'u45' : '45p';   // aligned to LIMRA's published age split
   const kb = p.kids > 0 ? 'k' : '0';
   const table = {
-    'single_0_y': [55000, 90000, 145000],
-    'single_0_m': [80000,130000, 205000],
-    'single_0_s': [60000, 90000, 140000],
-    'single_k_y': [80000,135000, 200000],
-    'single_k_m': [95000,155000, 235000],
-    'single_k_s': [70000,110000, 165000],
-    'married_0_y':[100000,165000,260000],
-    'married_0_m':[130000,210000,335000],
-    'married_0_s': [90000,140000,225000],
-    'married_k_y':[140000,235000,385000],
-    'married_k_m':[170000,285000,445000],
-    'married_k_s':[110000,175000,270000],
+    'single_0_u45':  [ 80000, 190000, 285000, 405000],  // Table 15: $221,764
+    'single_0_45p':  [ 50000, 120000, 180000, 250000],  // Table 15: $137,185
+    'single_k_u45':  [100000, 245000, 370000, 520000],  // $221,764 × 1.29 (modeled uplift)
+    'single_k_45p':  [ 70000, 175000, 260000, 365000],  // $137,185 × 1.47 (modeled uplift)
+    'married_0_u45': [110000, 270000, 405000, 565000],  // Table 15: $311,877
+    'married_0_45p': [110000, 265000, 395000, 555000],  // Table 15: $305,374
+    'married_k_u45': [145000, 345000, 520000, 730000],  // Table 15: $401,407
+    'married_k_45p': [160000, 385000, 580000, 815000],  // Table 15: $447,976
   };
   const key = `${p.marital}_${kb}_${ab}`;
-  return (table[key] || [100000,175000,270000])[ib];
+  return (table[key] || [105000, 255000, 385000, 540000])[ib];
 }
 
 function getProduct(p) {
@@ -963,22 +1004,22 @@ function getInsight(typical, actual, current, p) {
   if (current>0 && current>=typical) return {
     icon:'✅', bg:'#ECFDF5',
     title:'You may be well covered',
-    body:`Your current coverage exceeds the typical benchmark for ${stageLabel(p)} by ${fmtS(current-typical)}. Review periodically as your situation changes.`
+    body:`Your current coverage is above the recommended amount for ${stageLabel(p)} by ${fmtS(current-typical)}. Worth reviewing now and then as life changes.`
   };
   if (actual>typical) return {
     icon:'📊', bg:'#EFF6FF',
-    title:'Your cohort tends to carry above the benchmark',
-    body:`People in similar profiles carry ${fmtS(actual)} on average — slightly above the needs-based benchmark of ${fmtS(typical)}. This reflects higher income-protection preferences in your demographic.`
+    title:'Families like yours tend to carry more than the estimate',
+    body:`People like you carry ${fmtS(actual)} on average — a little above the recommended ${fmtS(typical)}. Families in your situation often choose extra protection.`
   };
   if (typical-actual>150000) return {
     icon:'⚠️', bg:'#FFFBEB',
-    title:'Your cohort is underinsured on average',
-    body:`People in your profile typically carry ${fmtS(actual)}, but the benchmark suggests ${fmtS(typical)} — a gap of ~${fmtS(typical-actual)}. This reflects a known underinsurance trend (LIMRA, 2024).`
+    title:'Most families like yours don\'t have enough coverage',
+    body:`People like you typically carry ${fmtS(actual)}, but the estimate suggests ${fmtS(typical)} — about ${fmtS(typical-actual)} more. Most families are underinsured (LIMRA, 2024).`
   };
   if (gap>200000) return {
     icon:'💡', bg:'#FEF9C3',
-    title:`Potential gap of ~${fmtS(gap)}`,
-    body:`Based on your income, dependents, and obligations, you may want additional coverage to reach the typical benchmark for ${stageLabel(p)}.`
+    title:`You may want about ${fmtS(gap)} more`,
+    body:`Based on your income, family, and obligations, you may want more coverage to reach the recommended amount for ${stageLabel(p)}.`
   };
   return {
     icon:'📋', bg:'#F0F9FF',
@@ -1011,7 +1052,7 @@ function render(r, p) {
   const prod = getProduct(p);
   const ins = getInsight(r.typ, actual, current, p);
 
-  document.getElementById('r-title').textContent = 'Benchmark for ' + stageLabel(p);
+  document.getElementById('r-title').textContent = 'Estimated coverage for ' + stageLabel(p);
 
   // Range bars
   countUp('v-c', r.con);
@@ -1026,8 +1067,11 @@ function render(r, p) {
   // Compare boxes
   countUp('cc-bm', r.typ);
   countUp('cc-ac', actual);
-  const ibLabel = p.income<50000?'lower income':p.income<100000?'mid income':'higher income';
+  const ibLabel = p.income<50000?'income under $50k':p.income<100000?'income $50k–$100k':p.income<125000?'income $100k–$125k':'income $125k+';
   document.getElementById('cc-ac-sub').textContent = stageLabel(p) + ' · ' + ibLabel;
+  // Honesty note for incomes well above the study's open-ended top band ($125k+)
+  const note = document.getElementById('cc-note');
+  if (note) note.style.display = (p.income >= 200000) ? 'block' : 'none';
   const yb = document.getElementById('cc-yo-box');
   yb.className = 'cmp-box cb-yo';
   if (current===0) {
@@ -1035,11 +1079,11 @@ function render(r, p) {
     document.getElementById('cc-yo-sub').textContent = 'Enter above to compare';
   } else if (current>=r.typ) {
     document.getElementById('cc-yo').textContent = fmtS(current);
-    document.getElementById('cc-yo-sub').textContent = '✓ Meets or exceeds benchmark';
+    document.getElementById('cc-yo-sub').textContent = '✓ Meets or beats the recommended amount';
     yb.className = 'cmp-box cb-yo ok';
   } else {
     document.getElementById('cc-yo').textContent = fmtS(current);
-    document.getElementById('cc-yo-sub').textContent = '~' + fmtS(r.typ-current) + ' potential gap';
+    document.getElementById('cc-yo-sub').textContent = '~' + fmtS(r.typ-current) + ' possible shortfall';
     yb.className = 'cmp-box cb-yo gap';
   }
 
@@ -1075,13 +1119,13 @@ function render(r, p) {
   const s = v => v===0?'±0':v>0?'+'+v:''+v;
   const vc = v => v>0?'bd-v p':v<0?'bd-v n':'bd-v';
   document.getElementById('bd-c').innerHTML = `
-    <div class="bd-row"><span class="bd-l">Life-stage base (${p.marital}${p.kids>0?', '+p.kids+' kid'+(p.kids>1?'s':''):''})</span><span class="bd-v">${bm}× → ${fmtS(bm*p.income)}</span></div>
+    <div class="bd-row"><span class="bd-l">Income replacement (${p.marital}${p.kids>0?', '+p.kids+' kid'+(p.kids>1?'s':''):''})</span><span class="bd-v">${bm}× → ${fmtS(bm*p.income)}</span></div>
     <div class="bd-row"><span class="bd-l">Age adjustment (${p.age} yrs)</span><span class="${vc(aa)}">${s(aa)}× → ${fmtFull(aa*p.income)}</span></div>
-    <div class="bd-row"><span class="bd-l">Additional adjustments</span><span class="${vc(ea)}">${s(ea)}× → ${fmtFull(ea*p.income)}</span></div>
-    ${ma>0?`<div class="bd-row"><span class="bd-l">Mortgage add-on</span><span class="bd-v p">+${fmtFull(ma)}</span></div>`:''}
-    <div class="bd-row"><span class="bd-l">Final expense floor</span><span class="bd-v">+${fmtFull(fe)}</span></div>
-    <div class="bd-row tot"><span>Typical benchmark (nearest $25k)</span><span>${fmtS(r.typ)}</span></div>
-    <div style="margin-top:10px;font-size:11px;color:var(--text-muted)">Multiplier: ${tm}× · Range: ${lm}×–${hm}× income</div>`;
+    <div class="bd-row"><span class="bd-l">Family &amp; home factors</span><span class="${vc(ea)}">${s(ea)}× → ${fmtFull(ea*p.income)}</span></div>
+    ${ma>0?`<div class="bd-row"><span class="bd-l">Mortgage payoff</span><span class="bd-v p">+${fmtFull(ma)}</span></div>`:''}
+    <div class="bd-row"><span class="bd-l">Final expenses</span><span class="bd-v">+${fmtFull(fe)}</span></div>
+    <div class="bd-row tot"><span>Recommended coverage (rounded)</span><span>${fmtS(r.typ)}</span></div>
+    <div style="margin-top:10px;font-size:11px;color:var(--text-muted)">In plain terms: about ${tm} years of your income, plus your mortgage and final expenses.</div>`;
 
   const card = document.getElementById('results');
   card.classList.add('on');
