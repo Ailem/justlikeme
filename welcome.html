@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Your Benchmark Report — JustLikeMe</title>
+<meta name="description" content="Download your JustLikeMe Benchmark Report — the actuarial methodology behind your coverage range, and a worksheet to pressure-test it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A2342; --navy-mid:#14365F; --blue:#2F6BE5; --blue-light:#EEF4FF;
+  --cyan:#34BDF2; --green:#059669; --amber:#D97706;
+  --text:#0E1B2E; --text-mid:#33415A; --text-soft:#5E708A; --text-muted:#93A1B5;
+  --border:#E5EAF1; --surface:#F4F7FB; --white:#FFFFFF;
+  --display:'Bricolage Grotesque','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --radius:18px; --radius-sm:11px;
+  --shadow:0 1px 2px rgba(10,35,66,0.06), 0 6px 24px rgba(10,35,66,0.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--text); background:var(--surface);
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--blue)}
+.wrap{max-width:660px; margin:0 auto; padding:0 20px 72px}
+
+/* header */
+.topbar{background:var(--navy); padding:18px 0; margin-bottom:40px}
+.topbar .wrap{padding-bottom:0; display:flex; align-items:center; gap:10px}
+.mark{
+  font-family:var(--display); font-weight:700; font-size:19px;
+  color:var(--white); text-decoration:none; letter-spacing:-.01em;
+}
+.mark span{color:var(--cyan)}
+.tagline{color:#9FB4D4; font-size:13px}
+
+/* hero */
+.eyebrow{
+  display:inline-block; background:var(--blue-light); color:var(--blue);
+  font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+  padding:5px 11px; border-radius:999px; margin-bottom:16px;
+}
+h1{
+  font-family:var(--display); font-size:34px; line-height:1.18;
+  letter-spacing:-.02em; color:var(--navy); margin-bottom:12px;
+}
+.lede{font-size:17px; color:var(--text-mid); margin-bottom:28px}
+
+/* card */
+.card{
+  background:var(--white); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:28px; margin-bottom:22px;
+}
+.card h2{
+  font-family:var(--display); font-size:20px; letter-spacing:-.01em;
+  color:var(--navy); margin-bottom:10px;
+}
+.card p + p{margin-top:12px}
+.card p{color:var(--text-mid); font-size:15.5px}
+
+/* download */
+.dl{text-align:center; padding:34px 28px}
+.btn{
+  display:inline-block; background:var(--blue); color:var(--white);
+  font-weight:600; font-size:16px; text-decoration:none;
+  padding:15px 34px; border-radius:var(--radius-sm);
+  box-shadow:0 2px 8px rgba(47,107,229,.28); transition:transform .12s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.dl .sub{margin-top:12px; font-size:13.5px; color:var(--text-muted)}
+
+/* EARLY-ACCESS NOTICE — delete this whole block in Week 3 when the real PDF ships */
+.notice{
+  background:#FFF9ED; border:1px solid #F3DFB8; border-left:4px solid var(--amber);
+  border-radius:var(--radius-sm); padding:18px 20px; margin-bottom:22px;
+}
+.notice strong{color:#8A5200; display:block; margin-bottom:5px; font-size:15px}
+.notice p{color:#7A5A2E; font-size:14.5px}
+/* END EARLY-ACCESS NOTICE */
+
+/* list */
+ul.checks{list-style:none; margin-top:14px}
+ul.checks li{
+  position:relative; padding-left:26px; margin-bottom:9px;
+  color:var(--text-mid); font-size:15.5px;
+}
+ul.checks li::before{
+  content:""; position:absolute; left:0; top:9px;
+  width:7px; height:7px; border-radius:50%; background:var(--cyan);
+}
+
+/* ask */
+.ask{background:var(--navy); border:none}
+.ask h2{color:var(--white)}
+.ask p{color:#BFD0E8}
+.ask .btn{background:var(--cyan); color:var(--navy); margin-top:16px; box-shadow:none}
+
+/* footer */
+.foot{
+  margin-top:34px; padding-top:22px; border-top:1px solid var(--border);
+  font-size:12.5px; color:var(--text-muted); line-height:1.65;
+}
+.foot a{color:var(--text-soft)}
+@media(max-width:520px){
+  h1{font-size:27px}
+  .card{padding:22px}
+  .btn{display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="mark" href="/">Just<span>LikeMe</span></a>
+    <span class="tagline">Coverage benchmarks</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <span class="eyebrow">You're confirmed</span>
+  <h1>Your Benchmark Report is ready</h1>
+  <p class="lede">Thanks for confirming your email. Here's the report — no sales call, no broker handoff, nobody phoning you at dinner.</p>
+
+  <!-- EARLY-ACCESS NOTICE — DELETE THIS BLOCK IN WEEK 3 -->
+  <div class="notice">
+    <strong>You're early — here's what that means</strong>
+    <p>The full report is still being written. What you'll download today is a short preview. The complete version lands in your inbox in the next couple of weeks, automatically, at no cost. You don't need to do anything.</p>
+  </div>
+  <!-- END EARLY-ACCESS NOTICE -->
+
+  <div class="card dl">
+    <a class="btn" href="/guide.pdf" download>Download the report (PDF)</a>
+    <p class="sub">Trouble with the button? Open <a href="/guide.pdf">getjustlikeme.com/guide.pdf</a> directly.</p>
+  </div>
+
+  <div class="card">
+    <h2>What's inside</h2>
+    <ul class="checks">
+      <li>The actuarial methodology behind your coverage range — income replacement plus mortgage, education, debts and final expenses</li>
+      <li>How to read the range: what "basic," "recommended" and "extra protection" actually mean for a household like yours</li>
+      <li>A worksheet to pressure-test your own number against your real numbers</li>
+      <li>Where the comparison data comes from, and its limits — including what the published studies don't cover</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Why this exists</h2>
+    <p>Life insurance is one of the few financial products where the honest answer to "how much do I need?" is genuinely computable — yet almost nobody gets that answer without a salesperson attached to it.</p>
+    <p>JustLikeMe hands you the calculation directly. It runs the same needs-based method the industry uses — the one described in the NAIC's own buyer's guide — against published research, and shows its working. No commissions, no lead-selling, no policy recommendations. Just the arithmetic and the sources behind it, so you can walk into any conversation about coverage already knowing your number.</p>
+  </div>
+
+  <div class="card">
+    <h2>What happens next</h2>
+    <p>Occasional emails — one clear idea about life insurance at a time, written the way I'd explain it to a friend rather than the way a brochure would. No daily sends, no countdown timers, no pressure. Unsubscribe whenever you like; the link sits at the bottom of every email.</p>
+  </div>
+
+  <div class="card ask">
+    <h2>One question, if you have thirty seconds</h2>
+    <p>What's the one thing about life insurance you've never gotten a straight answer on? Hit reply on any email, or use the button below. I read every response, and they're what decide which part of this gets built next.</p>
+    <a class="btn" href="mailto:hello@getjustlikeme.com?subject=My%20life%20insurance%20question">Tell me what's unclear</a>
+  </div>
+
+  <div class="foot">
+    <p><strong>Educational only — not personalized financial or insurance advice.</strong> JustLikeMe produces general, preliminary estimates based on published research. It does not account for your full financial picture, health, tax position or estate plan, and it does not recommend, sell or place any insurance product. Talk to a licensed professional before making decisions about coverage.</p>
+    <p style="margin-top:10px">Methodology follows the needs-based approach in the <a href="https://content.naic.org/article/consumer-insight-tips-buying-life-insurance">NAIC Life Insurance Buyer's Guide</a>; comparison figures are derived from LIMRA's published household coverage research. Full sources on the <a href="/">main site</a>.</p>
+    <p style="margin-top:10px">© JustLikeMe · <a href="/">getjustlikeme.com</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>
