@@ -90,6 +90,14 @@ ul.checks li::before{
 .ask h2{color:var(--white)}
 .ask p{color:#BFD0E8}
 .ask .btn{background:var(--cyan); color:var(--navy); margin-top:16px; box-shadow:none}
+.mailfall{margin-top:14px; font-size:14px; color:#9FB4D4}
+.addr{color:var(--white); font-weight:500; -webkit-user-select:all; user-select:all}
+.copy{
+  background:transparent; border:1px solid rgba(255,255,255,.28); color:#BFD0E8;
+  font:inherit; font-size:12.5px; padding:3px 10px; margin-left:6px;
+  border-radius:7px; cursor:pointer; transition:background .15s, color .15s;
+}
+.copy:hover{background:rgba(255,255,255,.12); color:var(--white)}
 
 /* footer */
 .foot{
@@ -149,6 +157,7 @@ ul.checks li::before{
     <h2>One question, if you have thirty seconds</h2>
     <p>What's the one thing about life insurance you've never gotten a straight answer on? Hit reply on any email, or use the button below. I read every response, and they're what decide which part of this gets built next.</p>
     <a class="btn" href="mailto:info@getjustlikeme.com?subject=My%20life%20insurance%20question">Tell me what's unclear</a>
+    <p class="mailfall">Or write to <span class="addr" id="addr">info@getjustlikeme.com</span> <button class="copy" id="copyBtn" type="button">Copy</button></p>
   </div>
 
   <div class="foot">
@@ -158,6 +167,31 @@ ul.checks li::before{
   </div>
 
 </div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copyBtn');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var addr = document.getElementById('addr').textContent.trim();
+    var done = function(){
+      btn.textContent = 'Copied';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 1800);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(done, fallback);
+    } else { fallback(); }
+    function fallback(){
+      var t = document.createElement('textarea');
+      t.value = addr; t.setAttribute('readonly','');
+      t.style.position = 'absolute'; t.style.left = '-9999px';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch(e){}
+      document.body.removeChild(t);
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
