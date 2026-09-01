@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JustLikeMe — Life Insurance Coverage Benchmark</title>
-<meta name="description" content="See how your life insurance coverage compares to people just like you — a needs-based benchmark built on industry-standard actuarial methodology.">
+<meta name="description" content="See how your life insurance coverage compares to people just like you — a needs-based benchmark built on established, industry-consistent methodology.">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwQTIzNDIiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjE1IiByPSI0IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjI2IiByPSI0IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSI0NSIgY3k9IjQ5IiByPSI0IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSIxOSIgY3k9IjQ5IiByPSI0IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSIxNCIgY3k9IjI2IiByPSI0IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSI3LjUiIGZpbGw9IiMzNEJERjIiLz48L3N2Zz4K">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,9 +37,8 @@
   --radius-sm: 11px;
   --shadow: 0 1px 2px rgba(10,35,66,0.06), 0 6px 24px rgba(10,35,66,0.07);
 }
-<script defer src="/_vercel/insights/script.js"></script>
 body {
-     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--surface);
   color: var(--text);
   min-height: 100vh;
@@ -75,11 +74,11 @@ body {
 .hero-content { text-align: center; padding: 2px 20px 0; position: relative; z-index: 1; }
 .cohort { display: inline-flex; margin-bottom: 2px; }
 .cohort svg { width: 32px; height: 32px; }
-.hero h1 { font-family: var(--display); font-size: 27px; font-weight: 700; color: #fff; letter-spacing: -0.5px; margin: 0 auto 4px; line-height: 1.15; max-width: 680px; }
+.hero h1 { font-family: var(--display); font-size: 27px; font-weight: 700; color: #fff; letter-spacing: -0.5px; margin: 0 auto 10px; line-height: 1.18; max-width: 680px; }
 .hero h1 .accent { color: var(--cyan); }
-.hero p  { font-size: 14px; color: rgba(255,255,255,0.74); max-width: 760px; margin: 0 auto 8px; line-height: 1.4; }
-.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 15px; max-width: 820px; margin: 2px auto 0; position: relative; z-index: 1; }
-.trust-item { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,0.72); white-space: nowrap; }
+.hero p  { font-size: 14.5px; color: rgba(255,255,255,0.74); max-width: 740px; margin: 0 auto 20px; line-height: 1.5; text-wrap: balance; }
+.trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 11px 26px; max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+.trust-item { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; letter-spacing: 0.01em; color: rgba(255,255,255,0.78); white-space: nowrap; }
 .trust-item svg { color: var(--cyan); flex-shrink: 0; }
 
 /* LAYOUT */
@@ -392,10 +391,10 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
       </svg>
     </span>
     <h1>How does your life insurance coverage <span class="accent">compare</span>?</h1>
-    <p>See whether your family has enough life insurance — based on what people like you actually have.</p>
+    <p>See what similar households carry — and an estimate of what your family may need.</p>
     <div class="trust-row">
       <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Based on LIMRA research</span>
-      <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Actuarial methodology</span>
+      <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Industry-consistent method</span>
       <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Anonymous &amp; free</span>
       <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No sales calls</span>
       <span class="trust-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Educational only</span>
@@ -417,7 +416,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <div class="sample-profile">38 · Married · 2 kids · $120k income · homeowner</div>
   <div class="sample-mini">
     <div class="sm"><span class="sm-l">People like you carry</span><span class="sm-v">$520k</span></div>
-    <div class="sm"><span class="sm-l">Recommended</span><span class="sm-v">$1.1M–$1.5M</span></div>
+    <div class="sm"><span class="sm-l">Estimated need</span><span class="sm-v">$1.1M–$1.5M</span></div>
   </div>
   <div class="sample-gap">
     <div>
@@ -451,7 +450,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
         <div class="emsg" id="age-e">Enter a valid age (18–85).</div>
       </div>
       <div class="field">
-        <label class="lbl" for="state">State</label>
+        <label class="lbl" for="state">State <span style="font-weight:400;color:var(--text-muted);">(optional)</span></label>
         <div class="sel-wrap">
           <select id="state">
             <option value="">Select state…</option>
@@ -470,13 +469,13 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
             <option>Wisconsin</option><option>Wyoming</option><option>Washington D.C.</option>
           </select>
         </div>
-        <div class="emsg" id="state-e">Please select your state.</div>
+        <div class="hint" style="font-size:11.5px;color:var(--text-muted);margin-top:4px;">Helps us build regional benchmarks. Not used in your estimate.</div>
       </div>
     </div>
 
     <div class="two-col">
       <div class="field">
-        <label class="lbl" for="income">Annual Household Income</label>
+        <label class="lbl" for="income">Annual Household Income <span style="font-weight:400;color:var(--text-muted);">(in USD)</span></label>
         <div class="pfx-wrap">
           <span class="pfx">$</span>
           <input type="number" id="income" min="1" placeholder="e.g. 100000">
@@ -485,7 +484,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
         <div class="emsg" id="income-e">Please enter a valid income greater than $0.</div>
       </div>
       <div class="field">
-        <label class="lbl" for="curr">Current Life Insurance Coverage</label>
+        <label class="lbl" for="curr">Current Life Insurance Coverage <span style="font-weight:400;color:var(--text-muted);">(in USD)</span></label>
         <div class="pfx-wrap">
           <span class="pfx">$</span>
           <input type="number" id="curr" min="0" placeholder="0 if none">
@@ -585,21 +584,21 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
     <div class="bm-rows">
       <div class="bm-row">
         <div class="bm-top">
-          <span class="bm-lbl">Basic protection <span style="font-weight:400;color:var(--text-muted);font-size:11px">· covers the essentials</span></span>
+          <span class="bm-lbl">Basic estimate <span style="font-weight:400;color:var(--text-muted);font-size:11px">· covers the essentials</span></span>
           <span class="bm-val" id="v-c">—</span>
         </div>
         <div class="bar-track"><div class="bar-fill c" id="b-c"></div></div>
       </div>
       <div class="bm-row">
         <div class="bm-top">
-          <span class="bm-lbl typ">Recommended <span class="bm-badge">Best fit</span></span>
+          <span class="bm-lbl typ">Needs-based estimate <span class="bm-badge">Mid-range</span></span>
           <span class="bm-val typ" id="v-t">—</span>
         </div>
         <div class="bar-track"><div class="bar-fill t" id="b-t"></div></div>
       </div>
       <div class="bm-row">
         <div class="bm-top">
-          <span class="bm-lbl">Extra protection <span style="font-weight:400;color:var(--text-muted);font-size:11px">· a fuller cushion</span></span>
+          <span class="bm-lbl">Extra cushion <span style="font-weight:400;color:var(--text-muted);font-size:11px">· a fuller buffer</span></span>
           <span class="bm-val" id="v-p">—</span>
         </div>
         <div class="bar-track"><div class="bar-fill p" id="b-p"></div></div>
@@ -612,12 +611,12 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
     <div class="sec-title">How you compare</div>
     <div class="cmp-grid">
       <div class="cmp-box cb-bm">
-        <div class="cmp-lbl">Recommended coverage</div>
+        <div class="cmp-lbl">Estimated need</div>
         <div class="cmp-val" id="cc-bm">—</div>
-        <div class="cmp-sub">the suggested amount for you</div>
+        <div class="cmp-sub">your needs-based estimate</div>
       </div>
       <div class="cmp-box cb-ac">
-        <div class="cmp-lbl">Average for families like yours</div>
+        <div class="cmp-lbl">Estimated average for similar households</div>
         <div class="cmp-val" id="cc-ac">—</div>
         <div class="cmp-sub" id="cc-ac-sub">families like yours</div>
       </div>
@@ -636,7 +635,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <div class="vc-section">
     <div class="sec-title" style="padding-top:18px">Coverage at a glance</div>
     <div class="vc-row">
-      <div class="vc-name">Recommended</div>
+      <div class="vc-name">Estimated need</div>
       <div class="vc-wrap">
         <div class="vc-bg"></div>
         <div class="vc-fill vbm" id="vf-bm"><span class="vc-lbl" id="vl-bm"></span></div>
@@ -670,7 +669,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <!-- Product -->
   <div class="prod-row">
     <div>
-      <div class="prod-eyebrow">A common starting point</div>
+      <div class="prod-eyebrow">How people often structure coverage</div>
       <div class="prod-val" id="pt">—</div>
       <div class="prod-desc" id="pd">—</div>
     </div>
@@ -697,7 +696,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
       <h3>Get your full Benchmark Report</h3>
-      <p>A PDF guide to your benchmark — the actuarial methodology behind the numbers, how to read your coverage range, and a worksheet to pressure-test it — sent straight to your inbox.</p>
+      <p>A PDF guide to your benchmark — the methodology behind the numbers, how to read your coverage range, and a worksheet to pressure-test it — sent straight to your inbox.</p>
       <form class="capture-form" id="cap-form" novalidate
             data-kit-form="9796383"
             data-kit-uid="d42fb5c9fe">
@@ -778,7 +777,7 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
 
   <div class="disc">
        <div style="margin-top:8px;font-size:11.5px;color:rgba(255,255,255,0.65);text-align:center;">Questions before you sign up? <a href="mailto:info@getjustlikeme.com" style="color:#7FD6F5;text-decoration:none;">info@getjustlikeme.com</a></div>
-    This tool follows the needs-based approach described in the NAIC Life Insurance Buyer's Guide — income replacement plus mortgage, education, debts and final expenses. The "average for families like yours" figures (face amount, not premiums; employer plus personal coverage combined) are derived from LIMRA's published household coverage study (Life Insurance Ownership in Focus, 2016 — values in 2016 dollars), with an income adjustment from the same study; single-parent figures are partly modeled because the study doesn't separate that group. Full sources are in the footer. Educational only — not personalized financial or insurance advice.
+    This tool uses a needs-based approach, in line with the NAIC Life Insurance Buyer's Guide — income replacement, family needs, mortgage, other debts and final expenses. The "estimated average for similar households" figures (face amount, not premiums; employer plus personal coverage combined) are derived from LIMRA's published household coverage study (Life Insurance Ownership in Focus, 2016 — values in 2016 dollars), with an income adjustment from the same study; single-parent figures are partly modeled because the study doesn't separate that group. Full sources are in the footer. Educational only — not personalized financial or insurance advice.
   </div>
 </div>
 
@@ -819,16 +818,16 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
   <div style="max-width:680px;margin:0 auto;text-align:left;line-height:1.55;">
     <div style="font-weight:700;color:var(--navy);font-size:13px;margin-bottom:8px;">Sources &amp; terms</div>
     <p style="margin:0 0 10px;">
-      <strong>Actuarial methodology</strong> is the branch of math insurers use to measure risk and estimate how much coverage a household needs.
+      <strong>Needs-based methodology</strong> is the standard approach used across the insurance industry to estimate how much coverage a household needs, rather than a rule of thumb.
       <strong>LIMRA</strong> and <strong>Life Happens</strong> are non-profit research groups whose yearly Insurance Barometer Study tracks life-insurance ownership and the coverage gap.
       <strong>NAIC</strong> is the National Association of Insurance Commissioners — the group of U.S. state insurance regulators; its Life Insurance Buyer's Guide explains how to work out how much coverage you need.
     </p>
     <p style="margin:0 0 10px;">
       <strong>What's behind the numbers:</strong> The underinsurance trend is published — about half of U.S. adults have life insurance and roughly 42% (about 102 million) say they need more
       (<a href="https://www.limra.com/en/newsroom/news-releases/2024/u.s.-life-insurance-need-gap-grows-in-2024/" target="_blank" rel="noopener" style="color:#1E9FD8;">LIMRA / Life Happens, 2024</a>).
-      Your recommended range is a needs-based estimate — income replacement plus mortgage, education, debts and final expenses — the approach the
+      Your estimated range is a needs-based figure — income replacement, family needs, mortgage, other debts and final expenses — the approach the
       <a href="https://content.naic.org/article/consumer-insight-tips-buying-life-insurance" target="_blank" rel="noopener" style="color:#1E9FD8;">NAIC Buyer's Guide</a> describes.
-      The "average for families like yours" figures are derived from LIMRA's
+      The "estimated average for similar households" figures are derived from LIMRA's
       <a href="https://www.limra.com/siteassets/newsroom/help-protect-our-families/consumer-insights/2021/january/life-insurance-ownership-in-focus-2016.pdf" target="_blank" rel="noopener" style="color:#1E9FD8;">Life Insurance Ownership in Focus (2016)</a>
       — the most recent public per-group coverage study, shown in 2016 dollars, with an income adjustment from the same study (single-parent figures partly modeled).
       For scale: the average new individual policy purchased was $209,000 in 2024
@@ -836,7 +835,17 @@ input.err, select.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220
       and the median coverage held per insured household was $150,000 in 2022
       (<a href="https://www.federalreserve.gov/econres/scfindex.htm" target="_blank" rel="noopener" style="color:#1E9FD8;">Federal Reserve Survey of Consumer Finances</a>, via ACLI).
     </p>
-       <div style="margin-top:8px;font-size:11.5px;color:rgba(255,255,255,0.65);text-align:center;">Questions before you sign up? <a href="mailto:info@getjustlikeme.com" style="color:#7FD6F5;text-decoration:none;">info@getjustlikeme.com</a></div>
+    <div style="font-weight:700;color:var(--navy);font-size:13px;margin:18px 0 8px;">Privacy &amp; data use</div>
+    <p style="margin:0 0 10px;">
+      <strong>Your calculator answers are not linked to your email address.</strong> When you complete a benchmark we store an anonymous row — age, state, income, current coverage, marital status, children, homeowner status, mortgage and debt bands, plus your device type and how you found us. It carries a random ID, not your name, email or IP address, and we use it only to improve future comparisons.
+    </p>
+    <p style="margin:0 0 10px;">
+      If you separately ask for the Benchmark Report, your email address is stored with our email provider (Kit) and used to send you the report and occasional educational emails. You can unsubscribe from any of them. We do not sell your data, pass it to insurers or brokers, or use it to generate sales calls. We use Vercel Web Analytics for aggregate page statistics, which does not use cookies to track you across sites.
+    </p>
+    <div style="margin:18px 0 12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:11px;text-align:center;">
+      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px;">Questions about any of this?</div>
+      <div style="font-size:13px;color:var(--text-mid);">Email <a href="mailto:info@getjustlikeme.com" style="color:#1E9FD8;font-weight:600;">info@getjustlikeme.com</a> — a real person reads every message.</div>
+    </div>
     <p style="margin:0;font-size:11px;">Educational only — not personalized financial or insurance advice.</p>
   </div>
 </div>
@@ -917,7 +926,6 @@ function validate() {
   };
   setErr('age',    'age-e',    !age || age < 18 || age > 85);
   setErr('income', 'income-e', !inc || inc <= 0);
-  setErr('state',  'state-e',  !document.getElementById('state').value);
   const mr = document.querySelector('input[name="marital"]:checked');
   document.getElementById('marital-e').classList.toggle('on', !mr); if (!mr) ok = false;
   const hr = document.querySelector('input[name="housing"]:checked');
@@ -940,10 +948,12 @@ function extraAdj(p) {
   let a = 0;
   if (p.kids>=2) a++; if (p.kids>=4) a++;
   if (p.sah) a++;  // homeowner no longer adds a flat 1x income — housing need is counted once, via the mortgage add-on
-  if (p.debt==='$25k-$100k') a++; if (p.debt==='Over $100k') a+=2;
   return a;
 }
 function mtgAdd(b) { return {'None':0,'Under $100k':75000,'$100k-$250k':175000,'$250k-$500k':350000,'Over $500k':550000}[b]||0; }
+// Other debt is added as a dollar amount (band midpoint), on the same basis as the
+// mortgage — not as a multiple of income. A $60k balance is $60k whatever you earn.
+function debtAdd(b) { return {'None':0,'Under $25k':12500,'$25k-$100k':62500,'Over $100k':150000}[b]||0; }
 
 // "Average for families like yours" — derived from LIMRA, "Life Insurance Ownership
 // in Focus" (2016), the most recent publicly available per-cohort U.S. coverage study.
@@ -985,12 +995,14 @@ function getActualAvg(p) {
   return (table[key] || [105000, 255000, 385000, 540000])[ib];
 }
 
+// Deliberately NOT derived from the user's answers. Suggesting a specific policy type
+// from age and family status alone ignores health, assets, budget and insurability —
+// and reads as a product recommendation rather than education.
 function getProduct(p) {
-  if (p.age>=65) return {t:'Final Expense or Whole Life', d:'Legacy and estate planning focus'};
-  if (p.age>=55) return {t:'10–15 Year Term', d:'Bridge coverage for remaining financial obligations'};
-  if (p.age<=35 && (p.kids>0||p.marital==='married')) return {t:'20–30 Year Term', d:'Covers dependents through full income-replacement period'};
-  if (p.age<=50 && (p.kids>0||p.marital==='married')) return {t:'20-Year Term', d:'Strong income-replacement fit for your life stage'};
-  return {t:'15–20 Year Term', d:'Common fit for your household profile'};
+  return {
+    t: 'Term insurance is commonly used for income replacement',
+    d: 'Level term covers a set number of years — typically the years dependents rely on your income. Permanent policies cost more and serve different goals, such as estate planning. Which fits depends on your health, budget and assets, so it is worth discussing with a licensed professional.'
+  };
 }
 
 function stageLabel(p) {
@@ -1006,22 +1018,22 @@ function getInsight(typical, actual, current, p) {
   if (current>0 && current>=typical) return {
     icon:'✅', bg:'#ECFDF5',
     title:'You may be well covered',
-    body:`Your current coverage is above the recommended amount for ${stageLabel(p)} by ${fmtS(current-typical)}. Worth reviewing now and then as life changes.`
+    body:`Your current coverage is above the needs-based estimate for ${stageLabel(p)} by ${fmtS(current-typical)}. Worth reviewing now and then as life changes.`
   };
   if (actual>typical) return {
     icon:'📊', bg:'#EFF6FF',
     title:'Families like yours tend to carry more than the estimate',
-    body:`People like you carry ${fmtS(actual)} on average — a little above the recommended ${fmtS(typical)}. Families in your situation often choose extra protection.`
+    body:`People like you carry ${fmtS(actual)} on average — a little above the needs-based estimate of ${fmtS(typical)}. Families in your situation often choose extra protection.`
   };
   if (typical-actual>150000) return {
     icon:'⚠️', bg:'#FFFBEB',
-    title:'Most families like yours don\'t have enough coverage',
-    body:`People like you typically carry ${fmtS(actual)}, but the estimate suggests ${fmtS(typical)} — about ${fmtS(typical-actual)} more. Most families are underinsured (LIMRA, 2024).`
+    title:'Your estimated need is above the peer benchmark',
+    body:`Similar households are estimated to carry about ${fmtS(actual)}, while your needs-based estimate is ${fmtS(typical)} — a difference of about ${fmtS(typical-actual)}. Many Americans report a life-insurance coverage gap, according to LIMRA research.`
   };
   if (gap>200000) return {
     icon:'💡', bg:'#FEF9C3',
     title:`You may want about ${fmtS(gap)} more`,
-    body:`Based on your income, family, and obligations, you may want more coverage to reach the recommended amount for ${stageLabel(p)}.`
+    body:`Based on your income, family, and obligations, you may want more coverage to reach the needs-based estimate for ${stageLabel(p)}.`
   };
   return {
     icon:'📋', bg:'#F0F9FF',
@@ -1039,18 +1051,20 @@ function calc(p) {
   const hm = tm+2;
   const fe = p.income<50000 ? 20000 : 25000;
   const ma = mtgAdd(p.mortgage);
+  const da = debtAdd(p.debt);
   const R = v => Math.round(v/25000)*25000;
   return {
-    con: R(lm*p.income+fe+ma),
-    typ: R(tm*p.income+fe+ma),
-    pro: R(hm*p.income+fe+ma),
-    bd: {bm,aa,ea,tm,lm,hm,fe,ma}
+    con: R(lm*p.income+fe+ma+da),
+    typ: R(tm*p.income+fe+ma+da),
+    pro: R(hm*p.income+fe+ma+da),
+    bd: {bm,aa,ea,tm,lm,hm,fe,ma,da}
   };
 }
 
 function render(r, p) {
   const actual = getActualAvg(p);
-  const current = p.current||0;
+  const hasCurrent = p.current !== null && p.current !== undefined;
+  const current = hasCurrent ? p.current : 0;
   const prod = getProduct(p);
   const ins = getInsight(r.typ, actual, current, p);
 
@@ -1070,18 +1084,21 @@ function render(r, p) {
   countUp('cc-bm', r.typ);
   countUp('cc-ac', actual);
   const ibLabel = p.income<50000?'income under $50k':p.income<100000?'income $50k–$100k':p.income<125000?'income $100k–$125k':'income $125k+';
-  document.getElementById('cc-ac-sub').textContent = stageLabel(p) + ' · ' + ibLabel;
+  document.getElementById('cc-ac-sub').textContent = stageLabel(p) + ' · ' + ibLabel + ' · based on LIMRA 2016 data';
   // Honesty note for incomes well above the study's open-ended top band ($125k+)
   const note = document.getElementById('cc-note');
   if (note) note.style.display = (p.income >= 200000) ? 'block' : 'none';
   const yb = document.getElementById('cc-yo-box');
   yb.className = 'cmp-box cb-yo';
-  if (current===0) {
+  if (!hasCurrent) {
     document.getElementById('cc-yo').textContent = 'Not entered';
     document.getElementById('cc-yo-sub').textContent = 'Enter above to compare';
+  } else if (current===0) {
+    document.getElementById('cc-yo').textContent = '$0';
+    document.getElementById('cc-yo-sub').textContent = 'No coverage in place';
   } else if (current>=r.typ) {
     document.getElementById('cc-yo').textContent = fmtS(current);
-    document.getElementById('cc-yo-sub').textContent = '✓ Meets or beats the recommended amount';
+    document.getElementById('cc-yo-sub').textContent = '✓ Meets or beats the needs-based estimate';
     yb.className = 'cmp-box cb-yo ok';
   } else {
     document.getElementById('cc-yo').textContent = fmtS(current);
@@ -1117,7 +1134,7 @@ function render(r, p) {
   document.getElementById('pd').textContent = prod.d;
 
   // Breakdown
-  const {bm,aa,ea,tm,lm,hm,fe,ma} = r.bd;
+  const {bm,aa,ea,tm,lm,hm,fe,ma,da} = r.bd;
   const s = v => v===0?'±0':v>0?'+'+v:''+v;
   const vc = v => v>0?'bd-v p':v<0?'bd-v n':'bd-v';
   document.getElementById('bd-c').innerHTML = `
@@ -1125,9 +1142,10 @@ function render(r, p) {
     <div class="bd-row"><span class="bd-l">Age adjustment (${p.age} yrs)</span><span class="${vc(aa)}">${s(aa)}× → ${fmtFull(aa*p.income)}</span></div>
     <div class="bd-row"><span class="bd-l">Family &amp; home factors</span><span class="${vc(ea)}">${s(ea)}× → ${fmtFull(ea*p.income)}</span></div>
     ${ma>0?`<div class="bd-row"><span class="bd-l">Mortgage payoff</span><span class="bd-v p">+${fmtFull(ma)}</span></div>`:''}
+    ${da>0?`<div class="bd-row"><span class="bd-l">Other debt payoff</span><span class="bd-v p">+${fmtFull(da)}</span></div>`:''}
     <div class="bd-row"><span class="bd-l">Final expenses</span><span class="bd-v">+${fmtFull(fe)}</span></div>
-    <div class="bd-row tot"><span>Recommended coverage (rounded)</span><span>${fmtS(r.typ)}</span></div>
-    <div style="margin-top:10px;font-size:11px;color:var(--text-muted)">In plain terms: about ${tm} years of your income, plus your mortgage and final expenses.</div>`;
+    <div class="bd-row tot"><span>Estimated need (rounded)</span><span>${fmtS(r.typ)}</span></div>
+    <div style="margin-top:10px;font-size:11px;color:var(--text-muted)">In plain terms: about ${tm} years of your income, plus any mortgage and other debts, plus final expenses.</div>`;
 
   const card = document.getElementById('results');
   card.classList.add('on');
@@ -1168,7 +1186,7 @@ function run() {
       kids,
       homeowner: document.querySelector('input[name="housing"]:checked').value==='owner',
       sah: (() => { const el=document.querySelector('input[name="sah"]:checked'); return el?el.value==='yes':false; })(),
-      current:  parseFloat(document.getElementById('curr').value)||0,
+      current:  ((document.getElementById('curr').value||'').trim()==='') ? null : (parseFloat(document.getElementById('curr').value)||0),
       state:    document.getElementById('state').value,
       mortgage: document.getElementById('mtg').value,
       debt:     document.getElementById('debt').value,
@@ -1196,6 +1214,8 @@ document.addEventListener('keydown', e => { if (e.key==='Enter' && e.target.tagN
   const KIT_HOST = 'app.kit.com';
 
   const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const EMSG_DEFAULT = emsg.textContent;
+  const BTN_DEFAULT_HTML = btn.innerHTML;
 
   function showSuccess() {
     formWrap.style.display = 'none';
@@ -1209,6 +1229,7 @@ document.addEventListener('keydown', e => { if (e.key==='Enter' && e.target.tagN
     const email = emailEl.value.trim();
     if (!validEmail(email)) {
       emailEl.classList.add('err');
+      emsg.textContent = EMSG_DEFAULT;
       emsg.classList.add('on');
       emailEl.focus();
       return;
@@ -1240,7 +1261,13 @@ document.addEventListener('keydown', e => { if (e.key==='Enter' && e.target.tagN
       method: 'POST',
       mode: 'no-cors',
       body: data
-    }).then(showSuccess).catch(showSuccess);
+    }).then(showSuccess).catch(function () {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.innerHTML = BTN_DEFAULT_HTML;
+      emsg.textContent = 'Something went wrong — please check your connection and try again.';
+      emsg.classList.add('on');
+    });
   });
 
   // Don't let Enter in the email field trigger the calculator's recalculation.
@@ -1248,6 +1275,10 @@ document.addEventListener('keydown', e => { if (e.key==='Enter' && e.target.tagN
 
   // Clear the error state as the user corrects their email.
   emailEl.addEventListener('input', function () {
+    if (emsg.classList.contains('on') && emsg.textContent !== EMSG_DEFAULT) {
+      emsg.classList.remove('on');
+      emsg.textContent = EMSG_DEFAULT;
+    }
     if (emailEl.classList.contains('err') && validEmail(emailEl.value.trim())) {
       emailEl.classList.remove('err');
       emsg.classList.remove('on');
