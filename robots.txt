@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /welcome.html
 
-Sitemap: https://getjustlikeme.com/sitemap.xml
+Sitemap: https://www.getjustlikeme.com/sitemap.xml
